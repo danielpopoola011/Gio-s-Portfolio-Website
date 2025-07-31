@@ -1,93 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Gio's Portfolio website</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Gio's Portfolio Website</title>
+    <style>
+        /* Fonts and Reset */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: whitesmoke;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 5%;
+            background-color: #fff;
+            z-index: 999;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .navbar ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: #000;
+            margin-left: 20px;
+        }
+
+        /* About Section */
+        .about {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 5% 40px;
+            gap: 30px;
+        }
+
+        .about-info {
+            flex: 1 1 300px;
+        }
+
+        .about-info h1 {
+            color: #1889f3;
+            font-size: 36px;
+        }
+
+        .about-info h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .about-info p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .about-img {
+            flex: 1 1 300px;
+            text-align: center;
+        }
+
+        .about-img img {
+            max-width: 100%;
+            border-radius: 50%;
+        }
+
+        /* Gallery */
+        .head {
+            padding: 40px 5%;
+            text-align: center;
+        }
+
+        .slider {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 20px 0;
+            scroll-behavior: smooth;
+        }
+
+        .slider .item {
+            min-width: 150px;
+            flex-shrink: 0;
+        }
+
+        .slider .item img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        /* Contact */
+        .contact {
+            padding: 60px 5%;
+            background: #f0f0f0;
+        }
+
+        .contact h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .contact form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .contact input,
+        .contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact button {
+            padding: 10px 20px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar ul {
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background-color: white;
+                width: 100%;
+                display: none;
+            }
+
+            .navbar ul li {
+                margin: 10px 0;
+                text-align: center;
+            }
+
+            .navbar ul.show {
+                display: flex;
+            }
+
+            .about {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
-<body class="sharp">  
-    <navbar>
-        <img src="gios bg.jpg" alt="" class="bg-img">
-        <nav class="navbar">
-            <a href="#" class="logo">GIO</a>
-            <ul>
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </navbar>
+<body>
+    <nav class="navbar">
+        <div class="logo">GIO</div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
     <section id="about" class="about">
-        <div class="about-info">   
-            <section class="about">
-                <div class="about-info">  
-                    <h3>Hey guys It's 
-                    </h3>
-                    <h1><strong><b>GIO</b></strong></h1>
-                    <p>An unmatched web3 boy and a firm bliever in the TON Blockchain.
-                        As the Chief at TON Cabal,<br>I'm always on the lookout for new opportunities in the space.
-                        I Host livestreams and also the Ton Trivia show to keep the community engeged.
-                        Lets build the future of Web3 together!
-                    </p>
-                    <div class="btn-sci">
-                        <div class="sci">
-                            <a href="#"><i class='bx bxl-twitter'></i></a>
-                            <a href="#"><i class='bx bxl-telegram' ></i></box-icon></a>
-                            <b class="ton">Join the TON Cabal</b>
-                            <a href="#"><i class="riri"> </i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-img">
-                    <div class="img-box">
-                        <div class="img-item">
-                            <img src="Gio background 2.png"  class="new">
-                            <img src="Gio.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </section>
+        <div class="about-info">
+            <h3>Hey guys It's</h3>
+            <h1><strong>GIO</strong></h1>
+            <p>
+                An unmatched web3 boy and a firm believer in the TON Blockchain. As the Chief at TON Cabal, I'm always on the lookout for new opportunities in the space. I host livestreams and the Ton Trivia show to keep the community engaged. Let's build the future of Web3 together!
+            </p>
+        </div>
+        <div class="about-img">
+            <img src="Gio.png" alt="Gio">
         </div>
     </section>
-    <Gallery> </Gallery>
-       <section  id="gallery"class="head">
-           <div class="banner">
-               <div class="slider" style="--Quantity: 10">
-                   <div class="item" style="--position: 1"><img src="Gio 1.jpg" alt=""></div>
-                   <div class="item" style="--position: 2"><img src="Gio 2.jpg" alt=""></div>
-                   <div class="item" style="--position: 3"><img src="Gio 3.jpg" alt=""></div>
-                   <div class="item" style="--position: 4"><img src="Gio 4.jpg" alt=""></div>
-                   <div class="item" style="--position: 5"><img src="Gio 5.jpg" alt=""></div>
-                   <div class="item" style="--position: 6"><img src="Gio 6.jpg" alt=""></div>
-                   <div class="item" style="--position: 7"><img src="Gio 7.jpg" alt=""></div>
-                   <div class="item" style="--position: 8"><img src="Gio 8.jpg" alt=""></div>
-                   <div class="item" style="--position: 9"><img src="Gio 9.jpg" alt=""></div>
-                   <div class="item" style="--position: 10"><img src="Gio 10.jpg" alt=""></div>
-                </div>
-                <div class="content">
-                        <h1 data-content="I'M GIO">
-                          I'M GIO
-                        </h1>
-                        <div class="author">
-                        <p><b>Your famous web3 boy and TON lover.</b></p>
-                </div>
-                <div class="model">
-                </div>
-            </div>
-        </section>
-    </Gallery>
-    <Contact Section>
-        <section id="contact" class="contact">
-            <h2>Contact Me</h2>
-            <form action="#" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit" class="btn">Send Message</button>
-            </form>
-        </section>
-    </Contact>
+
+    <section id="gallery" class="head">
+        <h2>Gallery</h2>
+        <div class="slider">
+            <div class="item"><img src="Gio 1.jpg" alt=""></div>
+            <div class="item"><img src="Gio 2.jpg" alt=""></div>
+            <div class="item"><img src="Gio 3.jpg" alt=""></div>
+            <div class="item"><img src="Gio 4.jpg" alt=""></div>
+            <div class="item"><img src="Gio 5.jpg" alt=""></div>
+            <div class="item"><img src="Gio 6.jpg" alt=""></div>
+            <div class="item"><img src="Gio 7.jpg" alt=""></div>
+            <div class="item"><img src="Gio 8.jpg" alt=""></div>
+            <div class="item"><img src="Gio 9.jpg" alt=""></div>
+            <div class="item"><img src="Gio 10.jpg" alt=""></div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <form action="#" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
 </body>
 </html>
