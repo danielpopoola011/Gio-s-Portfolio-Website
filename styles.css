@@ -402,21 +402,20 @@ li a {
 }
 
 @media (max-width: 600px) {
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px 5%;
-    }
+    .hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
 
-    .navbar ul {
-        flex-direction: column;
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    .navbar ul li {
-        margin: 10px 0;
-    }
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background: #333;
+  transition: 0.3s;
+  border-radius: 2px;
+}
 
     .about {
         flex-direction: column;
