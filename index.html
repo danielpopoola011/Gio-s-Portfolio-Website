@@ -9,15 +9,26 @@
 <body class="sharp">
   <header>
     <img src="gios bg.jpg" alt="" class="bg-img" />
-    <nav class="navbar">
-      <a href="#" class="logo">GIO</a>
-      <ul>
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+    <!-- Navbar -->
+<nav class="navbar">
+  <div class="logo">GIO</div>
+
+  <!-- Hamburger Icon -->
+  <div class="hamburger" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <!-- Navigation Links -->
+  <ul class="nav-links" id="nav-links">
+    <li class="active"><a href="#">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
   </header>
 
 
@@ -83,10 +94,10 @@
     </form>
   </section>
 
-  <script>
+<script>
   function toggleMenu() {
-    const menu = document.getElementById('mobileMenu');
-    menu.classList.toggle('show');
+    const navLinks = document.getElementById('nav-links');
+    navLinks.classList.toggle('active');
   }
 </script>
 
